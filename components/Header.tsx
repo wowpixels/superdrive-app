@@ -7,7 +7,7 @@ import { ThemeToggler } from './ThemeToggler';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between shadow">
       <Link className="flex items-center space-x-4 group" href="/">
         <div className="bg-darkblue-500 transition-all group-hover:bg-darkblue-600">
           <Image

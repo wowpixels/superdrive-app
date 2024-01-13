@@ -45,7 +45,7 @@ export default function Home() {
 
       <div>
         <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
-        <p className="text-center font-light p-4">
+        <p className="text-center font-light px-4">
           The Superdrive app is intended for educational purposes only. It is
           not designed for storing sensitive or personal information. Use at
           your own risk.
