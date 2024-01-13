@@ -3,24 +3,27 @@ import { SignIn, SignInButton, SignedOut } from '@clerk/clerk-react';
 import { UserButton } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ThemeToggler } from './ThemeToggler';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b border-gray-200">
-      <Link className="flex items-center space-x-4" href="/">
-        <div className="bg-indigo-700">
+    <header className="flex items-center justify-between">
+      <Link className="flex items-center space-x-4 group" href="/">
+        <div className="bg-darkblue-500 transition-all group-hover:bg-darkblue-600">
           <Image
             src="/superdrive-logo.svg"
             width={50}
             height={50}
-            className="invert"
+            className="invert p-1"
             alt="SuperDrive logo"
           />
         </div>
-        <h1 className="font-bold text-xl">SuperDrive</h1>
+        <h1 className="font-bold text-xl group-hover:text-darkblue-600">
+          Superdrive
+        </h1>
       </Link>
       <div className="px-5 flex space-x-2 items-center">
-        {/* Theme toggler */}
+        <ThemeToggler />
         <UserButton afterSignOutUrl="/" />
         <SignedOut>
           <SignInButton afterSignInUrl="/dashboard" mode="modal" />
