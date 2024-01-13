@@ -32,7 +32,7 @@ async function Dashboard() {
     <div>
       <DropzoneArea />
 
-      <section className="container space-y-5">
+      <section className="container">
         <h2 className="font-bold">All Files</h2>
 
         <div>
