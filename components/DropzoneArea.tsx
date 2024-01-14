@@ -21,6 +21,9 @@ import {
 import { db, storage } from '@/firebase';
 import { uploadBytes, ref, getDownloadURL } from 'firebase/storage';
 
+// toast import
+import toast from 'react-hot-toast';
+
 function DropzoneArea() {
   const [loading, setLoading] = useState(false);
   const { isLoaded, isSignedIn, user } = useUser();
@@ -43,11 +46,12 @@ function DropzoneArea() {
     if (!user) return;
 
     setLoading(true);
+    const toastId = toast.loading('Uploading...');
 
     // create a doc in firebase collection
     const docRef = await addDoc(collection(db, `users`, user.id, 'files'), {
       userId: user.id,
-      fileName: selectedFile.name,
+      filename: selectedFile.name,
       fullName: user.fullName,
       profileImg: user.imageUrl,
       timestamp: serverTimestamp(),
@@ -67,6 +71,7 @@ function DropzoneArea() {
       });
     });
 
+    toast.success('File uploaded successfully', { id: toastId });
     setLoading(false);
   };
 
@@ -84,11 +89,11 @@ function DropzoneArea() {
         const isFileTooLarge =
           fileRejections.length > 0 && fileRejections[0].file.size > maxSize;
         return (
-          <section className="m-4">
+          <section className="m-8">
             <div
               {...getRootProps()}
               className={cn(
-                'w-full h-52 flex justify-center items-center p5 border border-dashed rounded-lg text-center transition-all hover:border-darkblue-500 hover:bg-darkblue-100 cursor-pointer',
+                'w-full h-52 flex justify-center items-center border border-dashed rounded-lg text-center transition-all hover:border-darkblue-500 hover:bg-darkblue-100 cursor-pointer',
                 isDragActive
                   ? 'border-darkblue-500 bg-darkblue-100 animate-pulse dark:bg-slate-800 dark:border-slate-700'
                   : 'border-slate-300 bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:hover:bg-slate-800 dark:hover:border-slate-700'

@@ -26,7 +26,11 @@ function Header() {
         <ThemeToggler />
         <UserButton afterSignOutUrl="/" />
         <SignedOut>
-          <SignInButton afterSignInUrl="/dashboard" mode="modal" />
+          <SignInButton afterSignInUrl="/dashboard" mode="modal">
+            <button className="font-semibold hover:text-darkblue-500">
+              Sign in
+            </button>
+          </SignInButton>
         </SignedOut>
       </div>
     </header>

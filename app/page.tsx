@@ -19,6 +19,7 @@ export default function Home() {
             distribute videos, authenticate documents, and monitor file
             interactions - all within the confines of Dropbox.
           </p>
+
           <Link
             className="flex bg-darkblue-500 w-fit text-white py-3 px-5 group transition-all hover:bg-darkblue-600"
             href="/dashboard"
@@ -44,11 +45,13 @@ export default function Home() {
       </div>
 
       <div>
-        <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
-        <p className="text-center font-light px-4">
-          The Superdrive app is intended for educational purposes only. It is
-          not designed for storing sensitive or personal information. Use at
-          your own risk.
+        <p className="text-center font-bold text-xl pt-10">Disclaimer</p>
+        <p className="text-center text-sm text-balance font-light px-4">
+          The Superdrive app is intended for educational purposes only. It
+          provides functionality to upload data and files to the cloud. However,
+          it is not designed for production use or for storing sensitive or
+          personal information. The SuperDrive app is not affiliated with
+          Dropbox in any way. Please use at your own discretion.
         </p>
       </div>
     </main>

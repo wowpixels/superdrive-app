@@ -8,6 +8,8 @@
     "nextjs",
     "superdrive",
     "tailwindcss",
-    "trpc"
+    "trpc",
+    "wowpixels",
+    "zustand"
   ]
 }
